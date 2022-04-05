@@ -1,15 +1,16 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Giphy/GiphySDK" "${PODS_XCFRAMEWORKS_BUILD_DIR}/Giphy"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/FBAEMKit/XCFrameworks" "${PODS_ROOT}/FBSDKCoreKit/XCFrameworks" "${PODS_ROOT}/FBSDKCoreKit_Basics/XCFrameworks" "${PODS_ROOT}/FBSDKLoginKit/XCFrameworks" "${PODS_ROOT}/Giphy/GiphySDK" "${PODS_ROOT}/NewRelicAgent" "${PODS_XCFRAMEWORKS_BUILD_DIR}/FBAEMKit" "${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit" "${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKCoreKit_Basics" "${PODS_XCFRAMEWORKS_BUILD_DIR}/FBSDKLoginKit" "${PODS_XCFRAMEWORKS_BUILD_DIR}/Giphy" "${PODS_XCFRAMEWORKS_BUILD_DIR}/NewRelicAgent"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/libwebp"
-LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" "${PODS_CONFIGURATION_BUILD_DIR}/libwebp" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -ObjC -l"libwebp" -framework "GiphyUISDK"
-OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AppAuth" "${PODS_ROOT}/Headers/Public/GTMAppAuth" "${PODS_ROOT}/Headers/Public/GTMSessionFetcher" "${PODS_ROOT}/Headers/Public/GoogleSignIn" "${PODS_ROOT}/Headers/Public/libwebp"
+LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" "${PODS_CONFIGURATION_BUILD_DIR}/AppAuth" "${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth" "${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher" "${PODS_CONFIGURATION_BUILD_DIR}/GoogleSignIn" "${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel-swift" "${PODS_CONFIGURATION_BUILD_DIR}/libwebp" /usr/lib/swift
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel-swift/Mixpanel.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/GoogleSignIn/GoogleSignIn.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AppAuth" -l"GTMAppAuth" -l"GTMSessionFetcher" -l"GoogleSignIn" -l"Mixpanel-swift" -l"c++" -l"libwebp" -l"z" -framework "CoreGraphics" -framework "CoreTelephony" -framework "CoreText" -framework "FBAEMKit" -framework "FBSDKCoreKit" -framework "FBSDKCoreKit_Basics" -framework "FBSDKLoginKit" -framework "Foundation" -framework "GiphyUISDK" -framework "LocalAuthentication" -framework "NewRelic" -framework "SafariServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -weak_framework "AuthenticationServices"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel-swift/Mixpanel.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/GoogleSignIn/GoogleSignIn.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
 PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
-SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Giphy"
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Giphy" "${PODS_CONFIGURATION_BUILD_DIR}/Mixpanel-swift"
 USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
