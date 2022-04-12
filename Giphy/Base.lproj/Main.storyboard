@@ -31,9 +31,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jr-yC-ATw">
-                                <rect key="frame" x="68" y="283" width="279" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jr-yC-ATw">
+                                <rect key="frame" x="66" y="201" width="300" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="zHI-XX-cuD"/>
+                                </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login with Google">
@@ -43,9 +45,11 @@
                                     <action selector="login_With_Google:" destination="QhF-cD-k6m" eventType="touchUpInside" id="pku-OU-F5W"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-St-Spk">
-                                <rect key="frame" x="68" y="355" width="279" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-es-Aex">
+                                <rect key="frame" x="77" y="201" width="58" height="50"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-St-Spk">
+                                <rect key="frame" x="83" y="277" width="292" height="50"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login with FaceBook">
@@ -55,9 +59,27 @@
                                     <action selector="login_Facebook:" destination="QhF-cD-k6m" eventType="touchUpInside" id="i1c-gZ-Wer"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="vUx-i6-Zfr">
+                                <rect key="frame" x="72" y="278" width="69" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eGo-eb-reR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Jr-yC-ATw" firstAttribute="leading" secondItem="fbe-St-Spk" secondAttribute="leading" constant="-17" id="1uo-1A-saP"/>
+                            <constraint firstItem="1Jr-yC-ATw" firstAttribute="trailing" secondItem="fbe-St-Spk" secondAttribute="trailing" constant="-9" id="3sf-Bd-5ts"/>
+                            <constraint firstItem="eGo-eb-reR" firstAttribute="bottom" secondItem="fbe-St-Spk" secondAttribute="bottom" constant="535" id="5SG-ZV-a7W"/>
+                            <constraint firstItem="eGo-eb-reR" firstAttribute="trailing" secondItem="CHV-es-Aex" secondAttribute="trailing" constant="279" id="9GL-vV-RUW"/>
+                            <constraint firstItem="eGo-eb-reR" firstAttribute="trailing" secondItem="1Jr-yC-ATw" secondAttribute="trailing" constant="48" id="CFM-Rk-CBg"/>
+                            <constraint firstItem="fbe-St-Spk" firstAttribute="top" secondItem="1Jr-yC-ATw" secondAttribute="bottom" constant="23" id="XGn-0R-H5d"/>
+                            <constraint firstItem="CHV-es-Aex" firstAttribute="top" secondItem="eGo-eb-reR" secondAttribute="top" constant="157" id="Yem-aM-Fzx"/>
+                            <constraint firstItem="1Jr-yC-ATw" firstAttribute="leading" secondItem="eGo-eb-reR" secondAttribute="leading" constant="66" id="bQx-Bd-cG5"/>
+                            <constraint firstItem="1Jr-yC-ATw" firstAttribute="bottom" secondItem="CHV-es-Aex" secondAttribute="bottom" constant="3" id="c8M-wX-eIf"/>
+                            <constraint firstItem="1Jr-yC-ATw" firstAttribute="top" secondItem="eGo-eb-reR" secondAttribute="top" constant="157" id="hR4-4I-7rK"/>
+                            <constraint firstItem="CHV-es-Aex" firstAttribute="leading" secondItem="eGo-eb-reR" secondAttribute="leading" constant="77" id="plF-oM-Xfe"/>
+                            <constraint firstItem="fbe-St-Spk" firstAttribute="top" secondItem="CHV-es-Aex" secondAttribute="bottom" constant="26" id="xDU-db-2n0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74L-DL-oES" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -66,6 +88,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="facebook" width="360" height="360"/>
+        <image name="google.png" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

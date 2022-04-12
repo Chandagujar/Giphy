@@ -23,45 +23,7 @@ class LoginViewController: UIViewController {
             "Opted out of email": true
         ])
         
-        let dateComponentsFormatter = DateComponentsFormatter()
-        dateComponentsFormatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth, .month, .year]
-        dateComponentsFormatter.maximumUnitCount = 1
-        dateComponentsFormatter.unitsStyle = .full
-        dateComponentsFormatter.string(from: Date(), to: Date(timeIntervalSinceNow: 4000000))  // "1 month"
         
-        let date1 = DateComponents(calendar: .current, year: 2014, month: 11, day: 28, hour: 5, minute: 9).date!
-        let date2 = DateComponents(calendar: .current, year: 2015, month: 8, day: 28, hour: 5, minute: 9).date!
-
-        let years = date2.years(from: date1)     // 0
-        let months = date2.months(from: date1)   // 9
-        let weeks = date2.weeks(from: date1)     // 39
-        let days = date2.days(from: date1)
-        print("days",days)// 273
-        let hours = date2.hours(from: date1)     // 6,553
-        let minutes = date2.minutes(from: date1) // 393,180
-        let seconds = date2.seconds(from: date1) // 23,590,800
-
-        let timeOffset = date2.offset(from: date1) // "9M"
-        print("timeOffset",timeOffset)
-        let date3 = DateComponents(calendar: .current, year: 2014, month: 11, day: 28, hour: 5, minute: 9).date!
-        let date4 = DateComponents(calendar: .current, year: 2015, month: 11, day: 28, hour: 5, minute: 9).date!
-
-        let timeOffset2 = date4.offset(from: date3) // "1y"
-
-        let date5 = DateComponents(calendar: .current, year: 2022, month: 3, day: 28).date!
-        let now = Date()
-        let timeOffset3 = now.offset(from: date5) // "1w"
-        var days2 = date5.days(from: now)
-        print("timeOffset3",days2)
-        
-        var str = "03/31/2022 06:30:59"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy 'HH':'mm':'ss"
-        let datestr = dateFormatter.date (from: str)
-        print("str",datestr)
-        
-        var dsy = datestr?.days(from: now)
-        print("dsv",dsy)
         // Do any additional setup after loading the view.
     }
     
