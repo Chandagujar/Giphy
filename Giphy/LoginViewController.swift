@@ -14,10 +14,15 @@ import NewRelic
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var google_Sign_Btn: UIButton!
+    @IBOutlet weak var facebook_Sign_Btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        // NewRelic.crashNow("This is a test crash")
-
+        google_Sign_Btn.layer.cornerRadius = 7
+        facebook_Sign_Btn.layer.cornerRadius = 7
+        
         Mixpanel.mainInstance().track(event: "Sign Up", properties: [
             "source": "Pat's affiliate site",
             "Opted out of email": true
@@ -40,6 +45,11 @@ class LoginViewController: UIViewController {
             let familyName = user.profile?.familyName
             let profilePicUrl = user.profile?.imageURL(withDimension: 320)
             print(fullName,emailAddress,profilePicUrl)
+            
+            let view_vc =  self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            view_vc.userNme = fullName ?? "nil"
+            self.navigationController?.pushViewController(view_vc, animated: true)
+            
         }
        
         

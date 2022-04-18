@@ -11,10 +11,13 @@ import GiphyUISDK
 
 
 class ViewController: UIViewController,GiphyDelegate {
+    
+    var userNme = ""
     let giphy = GiphyViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationItem.title = userNme
         
 
         // Do any additional setup after loading the view.
